@@ -1,0 +1,6 @@
+.DS_Store
+# Rohdaten der Befragten nicht veroeffentlichen
+raw_data_rafa.csv
+output/data_clean.csv
+Archive/
+__pycache__/

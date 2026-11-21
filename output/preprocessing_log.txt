@@ -1,0 +1,38 @@
+PREPROCESSING Projekt Rafa
+Eingabe: raw_data_rafa.csv (42 Zeilen, 144 Spalten)
+
+== FILTER ==
+Start: N = 42
+1) STATUS == complete: N = 32 (entfernt: 10, CASE 72, 73, 80, 110, 115, 141, 151, 157, 167, 169)
+   Gegencheck FINISHED: identisch mit STATUS
+2) Alter >= 18: alle Kategorien (1-7) sind >= 18 Jahre. Ungueltig/fehlend: 0
+3) Fuehrerscheinbesitz == 1: entfernt (Wert 2): 2 (CASE 83, 148)
+   N = 30
+4) Fehlende Messitems (AC/MM/TR, -9 oder leer): entfernt: 0
+
+>>> Nach Preprocessing-Filter: N = 30 (von 42)
+
+== PLAUSIBILITAETSPRUEFUNGEN ==
+(1) Wertebereiche AC 1-5, MM 1-6, TR 1-7, FAS 1-5, Alter 1-7, Gender 1-3: OK
+(2) DD15 = Anzahl der Kreuze (oder -1): OK
+(3) Fuehrerscheinbesitz = 1 und Jahre > 0: OK
+(4) AC/MM/TR t1+t2 vollstaendig: OK; RG01 in 1-8: OK
+Gesamt: alle Pruefungen bestanden
+
+== UMKODIERUNG ==
+MM_06 (t1, t2) umgekehrt: 7 - x, neue Spalten MM01_06_rev, MM02_06_rev (30 Faelle, Kontrolle x + rev = 7: OK)
+  Alle anderen MM-Items unveraendert (Survey-Tool hat sie bereits gepolt).
+AC t1/t2 auf -2..+2 umgerechnet (+2 = positiv). Items 01,02,04,05,07,09: 3 - x; Items 03,06,08: x - 3. Spalten AC0t_ii_s. Wertebereich -2..2: OK
+Subskalen pro Person (Mittel): ac_useful (AC 01,03,05,07,09), ac_satisf (AC 02,04,06,08) - auf Basis der umgerechneten _s-Spalten; tr_distrust (TR 01-05), tr_trust (TR 06-12, TR_12 vorlaeufig enthalten). Jeweils _t1 / _t2. TR ohne Umkodierung.
+Abgeleitet: group = (RG01+1)//2 (1-4 = CADS-Level), medium = manual (ungerade) / video (gerade)
+l3_experience = 1 bei Erfahrung 1 oder 2: 2 Person(en), CASE 144, 145. Werden nicht entfernt.
+
+== ERGEBNIS ==
+N nach Filter: 30
+N pro RG01-Code: 1: 4, 2: 4, 3: 3, 4: 4, 5: 4, 6: 4, 7: 2, 8: 5
+N pro group (CADS-Level): 1: 8, 2: 7, 3: 8, 4: 7
+N pro medium: manual: 13, video: 17
+Zeiten: TIME_SUM Min 241 / Max 1266 s (kein Filter, nur berichtet)
+
+geschrieben: output/data_clean.csv (30 Zeilen, 175 Spalten)
+geschrieben: output/sample_table.csv
