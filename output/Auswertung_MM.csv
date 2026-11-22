@@ -1,0 +1,81 @@
+gruppe,n,kategorie,item,item_text,M_t1,SD_t1,Min_t1,Max_t1,M_t2,SD_t2,Min_t2,Max_t2,delta_M
+1,8,functions,MM_11,... only works on highways.,2.0,1.309,1.0,4.0,4.0,1.414,2.0,6.0,2.0
+1,8,functions,MM_12,... recognizes limitations.,3.75,1.488,1.0,6.0,4.375,0.518,4.0,5.0,0.625
+1,8,functions,MM_14,... can perform emergency braking.,4.75,1.282,3.0,6.0,4.25,1.488,1.0,6.0,-0.5
+1,8,functions,MM_16,... operates between 0 and 95 km/h.,2.75,1.832,1.0,6.0,2.625,1.685,1.0,5.0,-0.125
+1,8,functions,MM_17,... adapts speed of vehicle in front.,5.375,0.518,5.0,6.0,4.5,1.69,1.0,6.0,-0.875
+1,8,functions,MM_18,... steers automatically.,4.5,1.309,3.0,6.0,3.875,1.356,1.0,5.0,-0.625
+1,8,functions,MM_19,... can handle traffic jams.,3.25,1.165,1.0,4.0,3.25,1.282,1.0,5.0,0.0
+1,8,functions,MM_20,... observes all traffic signs on highways.,3.75,1.389,1.0,5.0,4.125,1.126,2.0,6.0,0.375
+1,8,functions,MM_23,... follows the speed limit.,4.75,1.035,3.0,6.0,4.625,1.302,3.0,6.0,-0.125
+1,8,limitations,MM_06,... works in the dark.,2.75,1.165,1.0,4.0,3.0,1.604,2.0,6.0,0.25
+1,8,limitations,MM_09,... works in rain. (reversed),2.875,1.126,1.0,4.0,3.25,1.488,2.0,6.0,0.375
+1,8,limitations,MM_10,... can drive from start to finish. (reversed),4.0,1.604,2.0,6.0,4.0,1.773,2.0,6.0,0.0
+1,8,limitations,MM_13,... works without lane markings. (reversed),3.5,1.69,1.0,5.0,4.5,0.926,3.0,6.0,1.0
+1,8,limitations,MM_15,... can overtake slower vehicles. (reversed),3.5,1.512,1.0,5.0,4.0,1.604,2.0,6.0,0.5
+1,8,limitations,MM_21,... works in complex road works. (reversed),4.125,1.246,2.0,6.0,4.375,1.302,2.0,6.0,0.25
+1,8,limitations,MM_22,... works with yellow lane markings. (reversed),4.0,1.773,1.0,6.0,4.125,0.991,3.0,5.0,0.125
+1,8,limitations,MM_24,... can stop on side of road. (reversed),3.5,1.414,1.0,5.0,4.25,1.753,2.0,6.0,0.75
+1,8,operations,MM_25,The driver must consciously activate the system.,5.25,1.035,3.0,6.0,4.625,1.685,1.0,6.0,-0.625
+1,8,operations,MM_26,The driver must take over within seconds.,5.0,0.926,4.0,6.0,5.125,1.126,3.0,6.0,0.125
+1,8,operations,MM_27,The driver must constantly monitor the system. (reversed),1.875,1.356,1.0,5.0,2.125,1.727,1.0,6.0,0.25
+2,7,functions,MM_11,... only works on highways.,1.857,0.9,1.0,3.0,3.571,2.149,1.0,6.0,1.714
+2,7,functions,MM_12,... recognizes limitations.,5.429,0.535,5.0,6.0,5.143,0.378,5.0,6.0,-0.286
+2,7,functions,MM_14,... can perform emergency braking.,5.143,1.069,3.0,6.0,5.286,0.951,4.0,6.0,0.143
+2,7,functions,MM_16,... operates between 0 and 95 km/h.,3.143,1.952,1.0,6.0,2.714,2.059,1.0,6.0,-0.429
+2,7,functions,MM_17,... adapts speed of vehicle in front.,5.571,0.787,4.0,6.0,5.286,0.756,4.0,6.0,-0.286
+2,7,functions,MM_18,... steers automatically.,4.571,1.988,1.0,6.0,4.286,1.799,1.0,6.0,-0.286
+2,7,functions,MM_19,... can handle traffic jams.,4.0,1.732,1.0,6.0,3.571,2.225,1.0,6.0,-0.429
+2,7,functions,MM_20,... observes all traffic signs on highways.,4.143,1.676,1.0,6.0,4.286,1.976,1.0,6.0,0.143
+2,7,functions,MM_23,... follows the speed limit.,5.0,1.155,3.0,6.0,5.143,0.9,4.0,6.0,0.143
+2,7,limitations,MM_06,... works in the dark.,1.714,0.756,1.0,3.0,2.571,1.813,1.0,6.0,0.857
+2,7,limitations,MM_09,... works in rain. (reversed),1.714,0.951,1.0,3.0,3.571,1.902,1.0,6.0,1.857
+2,7,limitations,MM_10,... can drive from start to finish. (reversed),4.286,2.289,1.0,6.0,4.286,1.89,2.0,6.0,0.0
+2,7,limitations,MM_13,... works without lane markings. (reversed),4.571,1.397,3.0,6.0,4.857,1.676,2.0,6.0,0.286
+2,7,limitations,MM_15,... can overtake slower vehicles. (reversed),2.857,1.864,1.0,6.0,3.714,2.059,1.0,6.0,0.857
+2,7,limitations,MM_21,... works in complex road works. (reversed),3.286,2.059,1.0,6.0,4.714,1.604,2.0,6.0,1.429
+2,7,limitations,MM_22,... works with yellow lane markings. (reversed),3.714,1.89,1.0,6.0,4.857,1.676,2.0,6.0,1.143
+2,7,limitations,MM_24,... can stop on side of road. (reversed),2.0,1.0,1.0,4.0,2.429,1.902,1.0,6.0,0.429
+2,7,operations,MM_25,The driver must consciously activate the system.,5.143,1.464,2.0,6.0,5.571,0.787,4.0,6.0,0.429
+2,7,operations,MM_26,The driver must take over within seconds.,4.857,1.574,2.0,6.0,5.857,0.378,5.0,6.0,1.0
+2,7,operations,MM_27,The driver must constantly monitor the system. (reversed),1.857,1.215,1.0,4.0,3.0,2.309,1.0,6.0,1.143
+3,8,functions,MM_11,... only works on highways.,3.5,2.0,1.0,6.0,3.875,2.1,1.0,6.0,0.375
+3,8,functions,MM_12,... recognizes limitations.,4.75,1.035,3.0,6.0,4.75,1.389,3.0,6.0,0.0
+3,8,functions,MM_14,... can perform emergency braking.,4.25,1.982,1.0,6.0,4.75,1.581,2.0,6.0,0.5
+3,8,functions,MM_16,... operates between 0 and 95 km/h.,3.5,1.512,2.0,6.0,4.75,1.165,3.0,6.0,1.25
+3,8,functions,MM_17,... adapts speed of vehicle in front.,5.0,1.069,3.0,6.0,4.625,1.506,2.0,6.0,-0.375
+3,8,functions,MM_18,... steers automatically.,5.375,0.744,4.0,6.0,5.0,1.195,3.0,6.0,-0.375
+3,8,functions,MM_19,... can handle traffic jams.,4.5,0.756,4.0,6.0,4.0,1.512,2.0,6.0,-0.5
+3,8,functions,MM_20,... observes all traffic signs on highways.,4.0,1.773,2.0,6.0,4.75,1.165,3.0,6.0,0.75
+3,8,functions,MM_23,... follows the speed limit.,4.75,1.165,3.0,6.0,4.5,1.309,3.0,6.0,-0.25
+3,8,limitations,MM_06,... works in the dark.,3.5,1.414,2.0,6.0,3.0,1.852,1.0,6.0,-0.5
+3,8,limitations,MM_09,... works in rain. (reversed),2.875,1.126,2.0,5.0,2.75,1.488,1.0,5.0,-0.125
+3,8,limitations,MM_10,... can drive from start to finish. (reversed),3.25,1.165,1.0,5.0,3.0,1.852,1.0,6.0,-0.25
+3,8,limitations,MM_13,... works without lane markings. (reversed),4.375,1.188,2.0,5.0,4.25,1.282,2.0,6.0,-0.125
+3,8,limitations,MM_15,... can overtake slower vehicles. (reversed),2.5,0.926,1.0,4.0,3.875,1.246,2.0,6.0,1.375
+3,8,limitations,MM_21,... works in complex road works. (reversed),4.0,1.069,3.0,6.0,3.75,1.282,2.0,6.0,-0.25
+3,8,limitations,MM_22,... works with yellow lane markings. (reversed),3.25,1.282,1.0,5.0,3.5,1.852,1.0,6.0,0.25
+3,8,limitations,MM_24,... can stop on side of road. (reversed),2.875,1.126,1.0,5.0,2.25,1.282,1.0,4.0,-0.625
+3,8,operations,MM_25,The driver must consciously activate the system.,5.5,0.926,4.0,6.0,4.75,1.488,3.0,6.0,-0.75
+3,8,operations,MM_26,The driver must take over within seconds.,5.0,1.069,3.0,6.0,5.0,1.069,3.0,6.0,0.0
+3,8,operations,MM_27,The driver must constantly monitor the system. (reversed),1.625,0.916,1.0,3.0,2.75,1.669,1.0,6.0,1.125
+4,7,functions,MM_11,... only works on highways.,3.0,1.414,1.0,5.0,3.857,2.193,1.0,6.0,0.857
+4,7,functions,MM_12,... recognizes limitations.,4.571,1.272,3.0,6.0,5.0,1.0,4.0,6.0,0.429
+4,7,functions,MM_14,... can perform emergency braking.,4.571,1.618,2.0,6.0,5.143,1.215,3.0,6.0,0.571
+4,7,functions,MM_16,... operates between 0 and 95 km/h.,3.571,1.272,1.0,5.0,3.429,1.512,1.0,6.0,-0.143
+4,7,functions,MM_17,... adapts speed of vehicle in front.,4.714,1.799,1.0,6.0,4.857,1.215,3.0,6.0,0.143
+4,7,functions,MM_18,... steers automatically.,5.143,0.69,4.0,6.0,5.0,1.0,4.0,6.0,-0.143
+4,7,functions,MM_19,... can handle traffic jams.,5.0,1.414,2.0,6.0,4.0,1.732,2.0,6.0,-1.0
+4,7,functions,MM_20,... observes all traffic signs on highways.,4.286,1.38,3.0,6.0,5.143,1.215,3.0,6.0,0.857
+4,7,functions,MM_23,... follows the speed limit.,4.714,1.113,3.0,6.0,5.143,0.9,4.0,6.0,0.429
+4,7,limitations,MM_06,... works in the dark.,2.857,1.215,1.0,5.0,3.571,2.07,1.0,6.0,0.714
+4,7,limitations,MM_09,... works in rain. (reversed),2.714,1.254,1.0,5.0,3.571,2.225,1.0,6.0,0.857
+4,7,limitations,MM_10,... can drive from start to finish. (reversed),3.857,1.574,1.0,5.0,3.571,2.225,1.0,6.0,-0.286
+4,7,limitations,MM_13,... works without lane markings. (reversed),4.0,1.826,1.0,6.0,4.714,1.604,2.0,6.0,0.714
+4,7,limitations,MM_15,... can overtake slower vehicles. (reversed),3.143,1.574,1.0,5.0,3.571,2.225,1.0,6.0,0.429
+4,7,limitations,MM_21,... works in complex road works. (reversed),3.571,1.718,1.0,6.0,4.0,2.0,1.0,6.0,0.429
+4,7,limitations,MM_22,... works with yellow lane markings. (reversed),3.286,1.604,1.0,5.0,4.143,1.952,1.0,6.0,0.857
+4,7,limitations,MM_24,... can stop on side of road. (reversed),4.429,1.718,1.0,6.0,4.429,2.07,1.0,6.0,0.0
+4,7,operations,MM_25,The driver must consciously activate the system.,4.571,1.902,1.0,6.0,4.429,1.902,1.0,6.0,-0.143
+4,7,operations,MM_26,The driver must take over within seconds.,4.429,1.272,3.0,6.0,4.857,1.676,2.0,6.0,0.429
+4,7,operations,MM_27,The driver must constantly monitor the system. (reversed),1.714,1.113,1.0,4.0,1.714,1.113,1.0,4.0,0.0

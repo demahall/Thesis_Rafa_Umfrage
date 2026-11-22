@@ -189,6 +189,29 @@ def make_plots(res):
         plt.close(fig)
 
 
+def export_mm_items(res):
+    """Auswertung_MM.csv: MM-Items (20) pro Gruppe 1-4, vorher/nachher."""
+    labels = {}
+    vf = BASE / "variables_cadstraining-study_2026-11-17_10-34.csv"
+    if vf.exists():
+        v = pd.read_csv(vf, encoding="utf-16", sep="\t", dtype=str, keep_default_na=False)
+        for _, r in v[v["VAR"].str.match(r"MM01_\d\d$")].iterrows():
+            labels["MM_" + r["VAR"][-2:]] = r["LABEL"].replace("MM_t1: ", "")
+    cat_of = {i: c for c, its in MM_CAT.items() for i in its}
+    x = res[(res["construct"] == "MM") & (res["level"] == "item") & (res["slice_type"] == "gruppe")].copy()
+    x["item_nr"] = x["name"].str[3:].astype(int)
+    x["gruppe"] = x["slice"].str[-1].astype(int)
+    x["kategorie"] = x["item_nr"].map(cat_of)
+    x["item_text"] = x["name"].map(labels)
+    x["_c"] = x["kategorie"].map({"functions": 0, "limitations": 1, "operations": 2})
+    x = x.sort_values(["gruppe", "_c", "item_nr"])
+    cols = ["gruppe", "n", "kategorie", "name", "item_text",
+            "M_t1", "SD_t1", "Min_t1", "Max_t1", "M_t2", "SD_t2", "Min_t2", "Max_t2", "delta_M"]
+    out = x[cols].rename(columns={"name": "item"})
+    out.to_csv(OUT / "Auswertung_MM.csv", index=False, encoding="utf-8")
+    return len(out)
+
+
 def main():
     df = pd.read_csv(OUT / "data_clean.csv")
     res = build_rows(df)
@@ -196,6 +219,7 @@ def main():
     res[num] = res[num].round(3)
     res.to_csv(OUT / "results_descriptive.csv", index=False, encoding="utf-8")
     make_plots(res)
+    print("Auswertung_MM.csv: %d Zeilen" % export_mm_items(res))
     print("N = %d, Zeilen in results_descriptive.csv: %d" % (len(df), len(res)))
     show = res[(res["slice"] == "alle") & (res["level"] != "item") & (res["method"] == "person_score")]
     print(show[["construct", "name", "M_t1", "SD_t1", "M_t2", "SD_t2", "delta_M"]].to_string(index=False))
