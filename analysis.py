@@ -3,7 +3,8 @@
 
 Eingabe : output/data_clean.csv (aus preprocessing.py)
 Ausgabe : output/results_descriptive.csv  (alle Kennzahlen, lange Tabelle)
-          output/plots/*.png
+          output/Auswertung_MM.csv
+(Plots: siehe visualization.py)
 Start   : python3 analysis.py
 
 Kennzahlen: M, SD (Stichproben-SD, n-1), Min, Max; jeweils t1 (before), t2 (after), Delta M = M_t2 - M_t1.
@@ -14,14 +15,9 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 
 BASE = Path(__file__).resolve().parent
 OUT = BASE / "output"
-PLOTS = OUT / "plots"
 
 # ---- Definitionen (CLAUDE.md Abschnitt 6) -----------------------------------
 AC_SUB = {"usefulness": [1, 3, 5, 7, 9], "satisfaction": [2, 4, 6, 8]}
@@ -119,76 +115,6 @@ def build_rows(df):
     return pd.DataFrame(rows)
 
 
-# ---- Plots ------------------------------------------------------------------
-COL = {"t1": "#9aa5b1", "t2": "#2b6cb0"}
-
-
-def bar_panel(ax, res, slice_names, names, title, ylim, hline=None):
-    x = np.arange(len(slice_names))
-    w = 0.8 / (2 * len(names))
-    for ni, name in enumerate(names):
-        sub = res[(res["name"] == name)].set_index("slice")
-        for ti, t in enumerate(("t1", "t2")):
-            pos = x + (ni * 2 + ti - (len(names) * 2 - 1) / 2) * w
-            m = [sub.loc[s, "M_" + t] if s in sub.index else np.nan for s in slice_names]
-            sd = [sub.loc[s, "SD_" + t] if s in sub.index else np.nan for s in slice_names]
-            ax.bar(pos, m, w * 0.95, yerr=sd, color=COL[t], alpha=1.0 if ni == 0 else 0.6,
-                   capsize=2, edgecolor="white", linewidth=0.5,
-                   label=("%s %s" % (name, "vorher" if t == "t1" else "nachher")))
-    ax.set_xticks(x)
-    ax.set_xticklabels(["%s\n(n=%d)" % (s, res[res["slice"] == s]["n"].iloc[0]) for s in slice_names],
-                       fontsize=8)
-    ax.set_title(title, fontsize=10)
-    ax.set_ylim(*ylim)
-    if hline is not None:
-        ax.axhline(hline, color="black", lw=0.6)
-    ax.spines[["top", "right"]].set_visible(False)
-
-
-def make_plots(res):
-    PLOTS.mkdir(parents=True, exist_ok=True)
-    spec = [
-        ("AC", "subscale", ["usefulness", "satisfaction"], (-2.2, 2.6), 0, "Acceptance (-2 bis +2)"),
-        ("TR", "subscale", ["distrust", "trust"], (0.5, 7.8), None, "Trust (1 bis 7)"),
-        ("MM", "category", ["functions", "limitations", "operations"], (0.5, 6.8), None, "Mental Model (1 bis 6)"),
-    ]
-    for construct, level, names, ylim, hl, title in spec:
-        r = res[(res["construct"] == construct) & (res["level"] == level) & (res["method"] == "person_score")]
-        fig, axes = plt.subplots(1, 3, figsize=(15, 4.6), gridspec_kw={"width_ratios": [1, 2.2, 1.6]})
-        panels = [
-            (["alle"], "Gesamt"),
-            (["Gruppe %d" % g for g in range(1, 5)], "Pro Gruppe (CADS-Level)"),
-            (["manual", "video"], "Pro Material"),
-        ]
-        for ax, (sl, tt) in zip(axes, panels):
-            sl = [s for s in sl if s in set(r["slice"])]
-            bar_panel(ax, r, sl, names, tt, ylim, hl)
-        h, l = axes[0].get_legend_handles_labels()
-        fig.legend(h, l, loc="lower center", ncol=len(l), fontsize=8, frameon=False)
-        fig.suptitle("%s: vorher vs. nachher (M, Fehlerbalken = SD, Personen-Mittel)" % title, fontsize=11)
-        fig.tight_layout(rect=(0, 0.08, 1, 0.95))
-        fig.savefig(PLOTS / ("%s_before_after.png" % construct.lower()), dpi=150)
-        plt.close(fig)
-
-    # Item-Plot: Delta M je Item (gesamt)
-    for construct, n_items in (("AC", 9), ("MM", 20), ("TR", 12)):
-        r = res[(res["construct"] == construct) & (res["level"] == "item") & (res["slice"] == "alle")]
-        fig, ax = plt.subplots(figsize=(9, 4))
-        x = np.arange(len(r))
-        ax.bar(x - 0.2, r["M_t1"], 0.4, yerr=r["SD_t1"], color=COL["t1"], capsize=2, label="vorher")
-        ax.bar(x + 0.2, r["M_t2"], 0.4, yerr=r["SD_t2"], color=COL["t2"], capsize=2, label="nachher")
-        ax.set_xticks(x)
-        ax.set_xticklabels(r["name"], rotation=60, fontsize=7)
-        ax.set_title("%s pro Item, alle Teilnehmer (M, SD)" % construct, fontsize=10)
-        ax.legend(frameon=False, fontsize=8)
-        ax.spines[["top", "right"]].set_visible(False)
-        if construct == "AC":
-            ax.axhline(0, color="black", lw=0.6)
-        fig.tight_layout()
-        fig.savefig(PLOTS / ("%s_items.png" % construct.lower()), dpi=150)
-        plt.close(fig)
-
-
 def export_mm_items(res):
     """Auswertung_MM.csv: MM-Items (20) pro Gruppe 1-4, vorher/nachher."""
     labels = {}
@@ -218,12 +144,10 @@ def main():
     num = [c for c in res.columns if c.startswith(("M_", "SD_", "Min_", "Max_")) or c == "delta_M"]
     res[num] = res[num].round(3)
     res.to_csv(OUT / "results_descriptive.csv", index=False, encoding="utf-8")
-    make_plots(res)
     print("Auswertung_MM.csv: %d Zeilen" % export_mm_items(res))
     print("N = %d, Zeilen in results_descriptive.csv: %d" % (len(df), len(res)))
     show = res[(res["slice"] == "alle") & (res["level"] != "item") & (res["method"] == "person_score")]
     print(show[["construct", "name", "M_t1", "SD_t1", "M_t2", "SD_t2", "delta_M"]].to_string(index=False))
-    print("Plots in", PLOTS)
 
 
 if __name__ == "__main__":

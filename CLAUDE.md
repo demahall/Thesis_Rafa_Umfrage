@@ -15,6 +15,7 @@ Status: **Preprocessing fertig** (`preprocessing.py` → `output/data_clean.csv`
 | `raw_data_rafa.csv` | **Eingabedaten** (aktueller Survey-Export, 42 Fälle × 144 Spalten; ersetzt `data_rafa.csv`) |
 | `preprocessing.py` | Preprocessing-Skript, Start: `python3 preprocessing.py` (Python 3.9, pandas) |
 | `analysis.py` | Deskriptive Auswertung (M, SD, Min, Max), Start: `python3 analysis.py` (pandas, matplotlib) |
+| `visualization.py` | Nur Visualisierung (Rafas Aufgabe 1: MM-Spaghetti-Plot pro Gruppe), Start: `python3 visualization.py` |
 | `output/` | `data_clean.csv`, `sample_table.csv`, `preprocessing_log.txt`, `results_descriptive.csv`, `plots/` |
 | `variables_cadstraining-study_2026-11-17_10-34.csv` | Variablenliste: Label, Typ, Fragetext pro Spalte |
 | `values_cadstraining-study_2026-11-17_10-37.csv` | Wertelabels (Code → Bedeutung) |
@@ -157,7 +158,7 @@ Ableitung: Gruppe aus `RG01` (1+2 → 1, 3+4 → 2, 5+6 → 3, 7+8 → 4), Mater
 - `results_descriptive.csv` (855 Zeilen): Spalten `slice_type, slice, n, construct, level, name, method, M/SD/Min/Max_t1, M/SD/Min/Max_t2, delta_M`. Schnitte: gesamt, pro Gruppe, pro Material, pro Gruppe × Material.
 - Ebenen: Item (AC 9, MM 20 zugeordnete, TR 12), Subskala/Kategorie, MM gesamt (20 Items). Subskalen in **zwei Methoden** (Spalte `method`): `item_aggregate` = MM-Logik (Mittel der Item-M und Item-SD, Min der Item-Minima, Max der Item-Maxima) und `person_score` = Personen-Mittel, dann M/SD/Min/Max über Teilnehmer. Welche in die Thesis kommt, entscheidet Rafa.
 - SD = Stichproben-SD (n−1). AC auf −2…+2, `MM_06` als `_rev`.
-- Plots: `ac/tr/mm_before_after.png` (Subskalen, gesamt/Gruppe/Material, M ± SD, Personen-Mittel) und `ac/tr/mm_items.png` (pro Item, alle).
+- Plots: nicht mehr in `analysis.py`. Alte Balkenplots (`*_before_after`, `*_items`) wurden am 22.11. gelöscht. Plots kommen ausschließlich aus `visualization.py`.
 - Gesamt (N = 30), Personen-Mittel t1 → t2: AC usefulness 0,83 → 0,77, satisfaction 0,70 → 0,74; TR distrust 3,63 → 3,57, trust 4,44 → 4,77; MM functions 4,24 → 4,37, limitations 3,35 → 3,75, operations 3,91 → 4,14. Manuell gegengerechnet (MM functions t1).
 - Zellen Gruppe × Material haben n = 2–5, Kennzahlen dort nur grob zu lesen.
 
@@ -184,3 +185,6 @@ Ableitung: Gruppe aus `RG01` (1+2 → 1, 3+4 → 2, 5+6 → 3, 7+8 → 4), Mater
 - 2026-11-20 (Abschluss): `TR_12` in Trust übernommen, wartet auf Rafas Bestätigung. Planung abgeschlossen, nächster Schritt: `preprocessing.py`.
 - 2026-11-20 (Preprocessing): `raw_data_rafa.csv` (42 Fälle) eingelesen, `preprocessing.py` geschrieben und ausgeführt → `output/data_clean.csv` (N = 30). Nächster Schritt: Auswertung (Abschnitt 6).
 - 2026-11-20 (Auswertung): `analysis.py` geschrieben und ausgeführt → `output/results_descriptive.csv` und Plots. Offen: Rafas Bestätigung (TR_12, MM-Ausschluss, Methode `item_aggregate` vs. `person_score`).
+- 2026-11-22 (Visualisierung, Aufgabe 1): `visualization.py` → `output/plots/mm_spaghetti_group1–4.png`. Spaghetti-/Paired-Slope-Plot, 2×2 (Functions, Limitations, Operations, Total), eine Linie pro Person (Personen-Mittel über die Items der Kategorie, Total = 20 Items), X: t1 (pre)/t2 (post), Y: 1–6, Manual blau/Punkt/durchgezogen, Video rot/Quadrat/gestrichelt, Legende oben rechts, Grid an, Titel „Mental Model Scores for group N“. Visualisierung bleibt in eigenem Skript. Annahme: „Mental“ = Manual.
+- Verlauf-Zusatz 2026-11-21/22: Repo https://github.com/demahall/Thesis_Rafa_Umfrage (öffentlich, ohne Rohdaten; `.gitignore`: `raw_data_rafa.csv`, `output/data_clean.csv`, `Archive/`). `output/Auswertung_MM.csv` (MM-Items pro Gruppe 1–4, vorher/nachher) erzeugt von `analysis.py`.
+- 2026-11-22 (Visualisierung, Aufgabe 2): `visualization.py` erweitert um Trust/Distrust (2×1, Trust = TR_06–12 links, Distrust = TR_01–05 rechts, Y 1–7, Titel „Trust and Distrust Group N“) → `output/plots/tr_spaghetti_group1–4.png`. Plot-Code aus `analysis.py` entfernt, alte Balkenplots gelöscht.
