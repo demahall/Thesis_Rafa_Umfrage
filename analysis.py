@@ -3,7 +3,7 @@
 
 Eingabe : output/data_clean.csv (aus preprocessing.py)
 Ausgabe : output/results_descriptive.csv  (alle Kennzahlen, lange Tabelle)
-          output/Auswertung_MM.csv, Auswertung_AC.csv, Auswertung_TR.csv
+          output/Auswertung_MM.csv, Auswertung_AC.csv, Auswertung_TR.csv, Auswertung_Demographie.csv
 (Plots: siehe visualization.py)
 Start   : python3 analysis.py
 
@@ -168,6 +168,45 @@ def export_construct(res, construct, filename, sub_map):
     return len(out)
 
 
+DEMO_VARS = [
+    ("Gender", "Gender", [1, 2, 3]),
+    ("Alter", "Age", [1, 2, 3, 4, 5, 6, 7]),
+    ("Fahrleistung", "Annual mileage", [1, 2, 3, 4, 5]),
+    ("FAS_TWW", "Blind spot assist", [1, 2, 3, 4, 5]),
+    ("FAS_Spurwarner", "Lane departure warning", [1, 2, 3, 4, 5]),
+    ("FAS_Tempomat", "Cruise control", [1, 2, 3, 4, 5]),
+    ("FAS_Spurhalte", "Lane keeping assist (active correction)", [1, 2, 3, 4, 5]),
+    ("FAS_ACC", "Adaptive cruise control (ACC)", [1, 2, 3, 4, 5]),
+    ("Erfahrung", "L3 experience", [1, 2, 3]),
+]
+
+
+def export_demographics(df):
+    """Auswertung_Demographie.csv: Haeufigkeit und Prozent je Kategorie (Basis: alle gueltigen Umfragen)."""
+    labels = {}
+    vf = BASE / "values_cadstraining-study_2026-11-17_10-37.csv"
+    v = pd.read_csv(vf, encoding="utf-16", sep="\t", dtype=str, keep_default_na=False)
+    for _, r in v.iterrows():
+        labels[(r["VAR"], r["RESPONSE"])] = r["MEANING"]
+    n = len(df)
+    rows = []
+    for var, title, codes in DEMO_VARS:
+        for c in codes:
+            cnt = int((df[var] == c).sum())
+            lab = labels.get((var, str(c)))
+            if var.startswith("FAS_"):
+                lab = ("%d = %s" % (c, lab)) if lab else "%d" % c
+            elif var == "Fahrleistung" or var == "Alter" or var == "Gender" or var == "Erfahrung":
+                lab = lab or str(c)
+            rows.append([var, title, str(c), lab, cnt, round(100.0 * cnt / n, 1)])
+        miss = int(df[var].isna().sum())
+        rows.append([var, title, "-9", "Not answered", miss, round(100.0 * miss / n, 1)])
+        rows.append([var, title, "", "Summe (N gueltige Umfragen)", n, 100.0])
+    out = pd.DataFrame(rows, columns=["variable", "beschreibung", "code", "bedeutung", "anzahl", "prozent"])
+    out.to_csv(OUT / "Auswertung_Demographie.csv", index=False, encoding="utf-8")
+    return out
+
+
 def main():
     df = pd.read_csv(OUT / "data_clean.csv")
     res = build_rows(df)
@@ -175,6 +214,8 @@ def main():
     res[num] = res[num].round(3)
     res.to_csv(OUT / "results_descriptive.csv", index=False, encoding="utf-8")
     print("Auswertung_MM.csv: %d Zeilen" % export_mm_items(res))
+    export_demographics(df)
+    print("Auswertung_Demographie.csv geschrieben")
     print("Auswertung_AC.csv: %d Zeilen" % export_construct(res, "AC", "Auswertung_AC.csv", AC_SUB))
     print("Auswertung_TR.csv: %d Zeilen" % export_construct(res, "TR", "Auswertung_TR.csv", TR_SUB))
     print("N = %d, Zeilen in results_descriptive.csv: %d" % (len(df), len(res)))
