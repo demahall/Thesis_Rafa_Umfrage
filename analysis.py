@@ -3,7 +3,7 @@
 
 Eingabe : output/data_clean.csv (aus preprocessing.py)
 Ausgabe : output/results_descriptive.csv  (alle Kennzahlen, lange Tabelle)
-          output/Auswertung_MM.csv
+          output/Auswertung_MM.csv, Auswertung_AC.csv, Auswertung_TR.csv
 (Plots: siehe visualization.py)
 Start   : python3 analysis.py
 
@@ -138,6 +138,36 @@ def export_mm_items(res):
     return len(out)
 
 
+def export_construct(res, construct, filename, sub_map):
+    """Auswertung_AC.csv / Auswertung_TR.csv: Subskalen (Personen-Mittel, wie im Boxplot) und Items,
+    pro Gruppe 1-4, je Material (alle, manual, video), vorher/nachher."""
+    pre = {"AC": "AC01_", "TR": "TR01_"}[construct]
+    labels = {}
+    vf = BASE / "variables_cadstraining-study_2026-11-17_10-34.csv"
+    if vf.exists():
+        v = pd.read_csv(vf, encoding="utf-16", sep="\t", dtype=str, keep_default_na=False)
+        for _, r in v[v["VAR"].str.match(pre + r"\d\d$")].iterrows():
+            labels["%s_%s" % (construct, r["VAR"][-2:])] = r["LABEL"].split(": ", 1)[-1]
+    sub_of = {"%s_%02d" % (construct, i): n for n, its in sub_map.items() for i in its}
+    x = res[(res["construct"] == construct) & (res["slice_type"].isin(["gruppe", "gruppe_x_material"]))
+            & (((res["level"] == "subscale") & (res["method"] == "person_score")) | (res["level"] == "item"))].copy()
+    x["gruppe"] = x["slice"].str.extract(r"Gruppe (\d)")[0].astype(int)
+    x["material"] = x["slice"].apply(lambda t: t.split(" / ")[1] if " / " in t else "alle")
+    x["ebene"] = x["level"].map({"subscale": "subscale", "item": "item"})
+    x["subskala"] = x.apply(lambda r: r["name"] if r["level"] == "subscale" else sub_of.get(r["name"]), axis=1)
+    x["item_text"] = x["name"].map(labels)
+    x["_e"] = (x["level"] == "item").astype(int)
+    x["_m"] = x["material"].map({"alle": 0, "manual": 1, "video": 2})
+    x["_s"] = x["subskala"].map({n: k for k, n in enumerate(sub_map)})
+    x = x.sort_values(["gruppe", "_m", "_s", "_e", "name"])
+    cols = ["gruppe", "material", "n", "ebene", "subskala", "name", "item_text",
+            "M_t1", "SD_t1", "Min_t1", "Max_t1", "M_t2", "SD_t2", "Min_t2", "Max_t2", "delta_M"]
+    out = x[cols].rename(columns={"name": "item"})
+    out.loc[out["ebene"] == "subscale", "item"] = ""
+    out.to_csv(OUT / filename, index=False, encoding="utf-8")
+    return len(out)
+
+
 def main():
     df = pd.read_csv(OUT / "data_clean.csv")
     res = build_rows(df)
@@ -145,6 +175,8 @@ def main():
     res[num] = res[num].round(3)
     res.to_csv(OUT / "results_descriptive.csv", index=False, encoding="utf-8")
     print("Auswertung_MM.csv: %d Zeilen" % export_mm_items(res))
+    print("Auswertung_AC.csv: %d Zeilen" % export_construct(res, "AC", "Auswertung_AC.csv", AC_SUB))
+    print("Auswertung_TR.csv: %d Zeilen" % export_construct(res, "TR", "Auswertung_TR.csv", TR_SUB))
     print("N = %d, Zeilen in results_descriptive.csv: %d" % (len(df), len(res)))
     show = res[(res["slice"] == "alle") & (res["level"] != "item") & (res["method"] == "person_score")]
     print(show[["construct", "name", "M_t1", "SD_t1", "M_t2", "SD_t2", "delta_M"]].to_string(index=False))

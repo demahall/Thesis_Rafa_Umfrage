@@ -1,0 +1,169 @@
+gruppe,material,n,ebene,subskala,item,item_text,M_t1,SD_t1,Min_t1,Max_t1,M_t2,SD_t2,Min_t2,Max_t2,delta_M
+1,alle,8,subscale,distrust,,,3.3,0.862,2.0,4.6,3.675,1.074,2.0,5.6,0.375
+1,alle,8,item,distrust,TR_01,The system is deceptive.,3.125,1.126,2.0,5.0,3.375,1.061,2.0,5.0,0.25
+1,alle,8,item,distrust,TR_02,The system behaves in an underhanded manner.,3.625,0.744,2.0,4.0,4.125,1.246,2.0,6.0,0.5
+1,alle,8,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",2.75,1.035,2.0,5.0,3.25,1.669,1.0,6.0,0.5
+1,alle,8,item,distrust,TR_04,I am wary of the system.,3.25,1.669,1.0,6.0,3.75,1.389,2.0,6.0,0.5
+1,alle,8,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,3.75,1.581,2.0,7.0,3.875,1.126,2.0,6.0,0.125
+1,alle,8,subscale,trust,,,4.589,1.354,1.714,6.0,4.571,1.285,2.0,6.0,-0.018
+1,alle,8,item,trust,TR_06,I am confident in the system.,4.625,1.685,1.0,6.0,4.125,1.642,1.0,6.0,-0.5
+1,alle,8,item,trust,TR_07,The system provides security.,4.625,1.685,1.0,6.0,4.75,1.669,1.0,6.0,0.125
+1,alle,8,item,trust,TR_08,The system has integrity.,4.75,1.035,3.0,6.0,4.625,1.061,3.0,6.0,-0.125
+1,alle,8,item,trust,TR_09,The system is dependable.,4.375,1.685,1.0,6.0,4.5,1.852,1.0,7.0,0.125
+1,alle,8,item,trust,TR_10,The system is reliable.,4.5,1.604,1.0,6.0,4.25,1.581,1.0,6.0,-0.25
+1,alle,8,item,trust,TR_11,I can trust the system.,4.625,1.598,1.0,6.0,4.5,1.604,1.0,6.0,-0.125
+1,alle,8,item,trust,TR_12,I am familiar with the system.,4.625,1.506,2.0,6.0,5.25,1.581,2.0,7.0,0.625
+1,manual,4,subscale,distrust,,,2.8,0.673,2.0,3.6,3.1,0.825,2.0,4.0,0.3
+1,manual,4,item,distrust,TR_01,The system is deceptive.,3.0,1.414,2.0,5.0,2.75,0.957,2.0,4.0,-0.25
+1,manual,4,item,distrust,TR_02,The system behaves in an underhanded manner.,3.25,0.957,2.0,4.0,3.75,1.708,2.0,6.0,0.5
+1,manual,4,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",2.5,0.577,2.0,3.0,2.75,0.957,2.0,4.0,0.25
+1,manual,4,item,distrust,TR_04,I am wary of the system.,2.5,0.577,2.0,3.0,3.0,1.155,2.0,4.0,0.5
+1,manual,4,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,2.75,0.5,2.0,3.0,3.25,0.957,2.0,4.0,0.5
+1,manual,4,subscale,trust,,,5.286,0.68,4.571,6.0,5.321,0.786,4.571,6.0,0.036
+1,manual,4,item,trust,TR_06,I am confident in the system.,5.75,0.5,5.0,6.0,5.25,0.957,4.0,6.0,-0.5
+1,manual,4,item,trust,TR_07,The system provides security.,5.5,1.0,4.0,6.0,5.75,0.5,5.0,6.0,0.25
+1,manual,4,item,trust,TR_08,The system has integrity.,5.25,0.957,4.0,6.0,5.25,0.957,4.0,6.0,0.0
+1,manual,4,item,trust,TR_09,The system is dependable.,5.0,0.816,4.0,6.0,5.0,1.155,4.0,6.0,0.0
+1,manual,4,item,trust,TR_10,The system is reliable.,5.25,0.957,4.0,6.0,5.25,0.957,4.0,6.0,0.0
+1,manual,4,item,trust,TR_11,I can trust the system.,5.25,0.957,4.0,6.0,5.25,0.957,4.0,6.0,0.0
+1,manual,4,item,trust,TR_12,I am familiar with the system.,5.0,1.414,3.0,6.0,5.5,1.0,4.0,6.0,0.5
+1,video,4,subscale,distrust,,,3.8,0.783,2.8,4.6,4.25,1.063,3.4,5.6,0.45
+1,video,4,item,distrust,TR_01,The system is deceptive.,3.25,0.957,2.0,4.0,4.0,0.816,3.0,5.0,0.75
+1,video,4,item,distrust,TR_02,The system behaves in an underhanded manner.,4.0,0.0,4.0,4.0,4.5,0.577,4.0,5.0,0.5
+1,video,4,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",3.0,1.414,2.0,5.0,3.75,2.217,1.0,6.0,0.75
+1,video,4,item,distrust,TR_04,I am wary of the system.,4.0,2.16,1.0,6.0,4.5,1.291,3.0,6.0,0.5
+1,video,4,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,4.75,1.708,3.0,7.0,4.5,1.0,4.0,6.0,-0.25
+1,video,4,subscale,trust,,,3.893,1.588,1.714,5.143,3.821,1.316,2.0,4.857,-0.071
+1,video,4,item,trust,TR_06,I am confident in the system.,3.5,1.732,1.0,5.0,3.0,1.414,1.0,4.0,-0.5
+1,video,4,item,trust,TR_07,The system provides security.,3.75,1.893,1.0,5.0,3.75,1.893,1.0,5.0,0.0
+1,video,4,item,trust,TR_08,The system has integrity.,4.25,0.957,3.0,5.0,4.0,0.816,3.0,5.0,-0.25
+1,video,4,item,trust,TR_09,The system is dependable.,3.75,2.217,1.0,6.0,4.0,2.449,1.0,7.0,0.25
+1,video,4,item,trust,TR_10,The system is reliable.,3.75,1.893,1.0,5.0,3.25,1.5,1.0,4.0,-0.5
+1,video,4,item,trust,TR_11,I can trust the system.,4.0,2.0,1.0,5.0,3.75,1.893,1.0,5.0,-0.25
+1,video,4,item,trust,TR_12,I am familiar with the system.,4.25,1.708,2.0,6.0,5.0,2.16,2.0,7.0,0.75
+2,alle,7,subscale,distrust,,,3.0,1.227,1.4,5.0,2.714,0.893,1.4,4.0,-0.286
+2,alle,7,item,distrust,TR_01,The system is deceptive.,2.714,1.113,1.0,4.0,2.286,1.113,1.0,4.0,-0.429
+2,alle,7,item,distrust,TR_02,The system behaves in an underhanded manner.,2.429,1.134,1.0,4.0,2.286,1.113,1.0,4.0,-0.143
+2,alle,7,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",2.429,1.718,1.0,6.0,2.571,1.397,1.0,5.0,0.143
+2,alle,7,item,distrust,TR_04,I am wary of the system.,3.857,1.864,1.0,6.0,4.0,2.0,2.0,7.0,0.143
+2,alle,7,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,3.571,1.988,1.0,7.0,2.429,0.976,1.0,4.0,-1.143
+2,alle,7,subscale,trust,,,4.327,1.301,2.714,5.857,5.0,0.857,3.429,5.857,0.673
+2,alle,7,item,trust,TR_06,I am confident in the system.,4.286,1.254,3.0,6.0,5.0,1.155,3.0,6.0,0.714
+2,alle,7,item,trust,TR_07,The system provides security.,4.714,1.254,3.0,6.0,5.571,0.787,5.0,7.0,0.857
+2,alle,7,item,trust,TR_08,The system has integrity.,4.143,1.574,2.0,6.0,4.714,0.951,3.0,6.0,0.571
+2,alle,7,item,trust,TR_09,The system is dependable.,4.286,1.113,3.0,6.0,4.714,0.951,3.0,6.0,0.429
+2,alle,7,item,trust,TR_10,The system is reliable.,5.0,1.155,3.0,6.0,5.0,1.0,3.0,6.0,0.0
+2,alle,7,item,trust,TR_11,I can trust the system.,4.429,1.397,2.0,6.0,5.143,1.215,3.0,7.0,0.714
+2,alle,7,item,trust,TR_12,I am familiar with the system.,3.429,2.82,1.0,7.0,4.857,1.574,3.0,7.0,1.429
+2,manual,3,subscale,distrust,,,2.467,1.007,1.4,3.4,2.267,1.026,1.4,3.4,-0.2
+2,manual,3,item,distrust,TR_01,The system is deceptive.,3.0,1.0,2.0,4.0,2.333,1.528,1.0,4.0,-0.667
+2,manual,3,item,distrust,TR_02,The system behaves in an underhanded manner.,2.333,1.155,1.0,3.0,2.333,1.528,1.0,4.0,0.0
+2,manual,3,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",1.667,0.577,1.0,2.0,2.0,1.0,1.0,3.0,0.333
+2,manual,3,item,distrust,TR_04,I am wary of the system.,2.333,1.528,1.0,4.0,2.333,0.577,2.0,3.0,0.0
+2,manual,3,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,3.0,1.0,2.0,4.0,2.333,0.577,2.0,3.0,-0.667
+2,manual,3,subscale,trust,,,4.333,0.873,3.571,5.286,5.095,0.36,4.714,5.429,0.762
+2,manual,3,item,trust,TR_06,I am confident in the system.,4.333,1.155,3.0,5.0,5.333,0.577,5.0,6.0,1.0
+2,manual,3,item,trust,TR_07,The system provides security.,4.667,1.528,3.0,6.0,5.333,0.577,5.0,6.0,0.667
+2,manual,3,item,trust,TR_08,The system has integrity.,4.0,2.0,2.0,6.0,4.667,0.577,4.0,5.0,0.667
+2,manual,3,item,trust,TR_09,The system is dependable.,4.333,0.577,4.0,5.0,4.667,0.577,4.0,5.0,0.333
+2,manual,3,item,trust,TR_10,The system is reliable.,5.333,0.577,5.0,6.0,5.333,0.577,5.0,6.0,0.0
+2,manual,3,item,trust,TR_11,I can trust the system.,5.0,0.0,5.0,5.0,5.333,0.577,5.0,6.0,0.333
+2,manual,3,item,trust,TR_12,I am familiar with the system.,2.667,2.082,1.0,5.0,5.0,1.0,4.0,6.0,2.333
+2,video,4,subscale,distrust,,,3.4,1.356,2.0,5.0,3.05,0.737,2.2,4.0,-0.35
+2,video,4,item,distrust,TR_01,The system is deceptive.,2.5,1.291,1.0,4.0,2.25,0.957,1.0,3.0,-0.25
+2,video,4,item,distrust,TR_02,The system behaves in an underhanded manner.,2.5,1.291,1.0,4.0,2.25,0.957,1.0,3.0,-0.25
+2,video,4,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",3.0,2.16,1.0,6.0,3.0,1.633,1.0,5.0,0.0
+2,video,4,item,distrust,TR_04,I am wary of the system.,5.0,1.155,4.0,6.0,5.25,1.708,3.0,7.0,0.25
+2,video,4,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,4.0,2.582,1.0,7.0,2.5,1.291,1.0,4.0,-1.5
+2,video,4,subscale,trust,,,4.321,1.696,2.714,5.857,4.929,1.169,3.429,5.857,0.607
+2,video,4,item,trust,TR_06,I am confident in the system.,4.25,1.5,3.0,6.0,4.75,1.5,3.0,6.0,0.5
+2,video,4,item,trust,TR_07,The system provides security.,4.75,1.258,3.0,6.0,5.75,0.957,5.0,7.0,1.0
+2,video,4,item,trust,TR_08,The system has integrity.,4.25,1.5,3.0,6.0,4.75,1.258,3.0,6.0,0.5
+2,video,4,item,trust,TR_09,The system is dependable.,4.25,1.5,3.0,6.0,4.75,1.258,3.0,6.0,0.5
+2,video,4,item,trust,TR_10,The system is reliable.,4.75,1.5,3.0,6.0,4.75,1.258,3.0,6.0,0.0
+2,video,4,item,trust,TR_11,I can trust the system.,4.0,1.826,2.0,6.0,5.0,1.633,3.0,7.0,1.0
+2,video,4,item,trust,TR_12,I am familiar with the system.,4.0,3.464,1.0,7.0,4.75,2.062,3.0,7.0,0.75
+3,alle,8,subscale,distrust,,,4.375,1.129,2.8,5.6,3.625,1.605,1.0,5.6,-0.75
+3,alle,8,item,distrust,TR_01,The system is deceptive.,4.5,1.773,2.0,7.0,3.5,1.927,1.0,6.0,-1.0
+3,alle,8,item,distrust,TR_02,The system behaves in an underhanded manner.,3.875,1.458,2.0,6.0,3.625,1.598,1.0,6.0,-0.25
+3,alle,8,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",4.625,1.598,2.0,6.0,4.0,1.69,1.0,6.0,-0.625
+3,alle,8,item,distrust,TR_04,I am wary of the system.,4.75,1.282,3.0,6.0,3.5,1.852,1.0,6.0,-1.25
+3,alle,8,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,4.125,0.835,3.0,5.0,3.5,1.69,1.0,6.0,-0.625
+3,alle,8,subscale,trust,,,4.5,0.881,2.714,5.571,4.804,1.098,3.571,6.714,0.304
+3,alle,8,item,trust,TR_06,I am confident in the system.,4.0,1.512,2.0,6.0,4.375,1.768,2.0,7.0,0.375
+3,alle,8,item,trust,TR_07,The system provides security.,4.625,1.188,3.0,6.0,5.25,1.753,2.0,7.0,0.625
+3,alle,8,item,trust,TR_08,The system has integrity.,4.875,0.641,4.0,6.0,5.375,1.188,4.0,7.0,0.5
+3,alle,8,item,trust,TR_09,The system is dependable.,5.25,1.035,4.0,7.0,5.125,1.356,3.0,7.0,-0.125
+3,alle,8,item,trust,TR_10,The system is reliable.,4.875,0.991,3.0,6.0,4.75,1.389,2.0,6.0,-0.125
+3,alle,8,item,trust,TR_11,I can trust the system.,4.375,1.188,2.0,6.0,4.25,1.488,2.0,6.0,-0.125
+3,alle,8,item,trust,TR_12,I am familiar with the system.,3.5,2.138,1.0,6.0,4.5,2.39,1.0,7.0,1.0
+3,manual,4,subscale,distrust,,,4.75,0.755,3.8,5.6,4.1,1.089,2.6,5.0,-0.65
+3,manual,4,item,distrust,TR_01,The system is deceptive.,4.75,1.5,3.0,6.0,3.75,1.893,1.0,5.0,-1.0
+3,manual,4,item,distrust,TR_02,The system behaves in an underhanded manner.,4.0,1.633,2.0,6.0,4.0,0.816,3.0,5.0,0.0
+3,manual,4,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",5.5,1.0,4.0,6.0,4.75,0.5,4.0,5.0,-0.75
+3,manual,4,item,distrust,TR_04,I am wary of the system.,5.0,0.816,4.0,6.0,3.75,1.708,2.0,6.0,-1.25
+3,manual,4,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,4.5,1.0,3.0,5.0,4.25,1.708,2.0,6.0,-0.25
+3,manual,4,subscale,trust,,,4.679,0.694,4.0,5.571,4.429,0.71,3.571,5.143,-0.25
+3,manual,4,item,trust,TR_06,I am confident in the system.,4.5,1.291,3.0,6.0,4.0,1.414,2.0,5.0,-0.5
+3,manual,4,item,trust,TR_07,The system provides security.,4.75,1.258,3.0,6.0,4.5,1.915,2.0,6.0,-0.25
+3,manual,4,item,trust,TR_08,The system has integrity.,4.75,0.5,4.0,5.0,4.75,0.5,4.0,5.0,0.0
+3,manual,4,item,trust,TR_09,The system is dependable.,5.0,0.816,4.0,6.0,4.5,1.0,3.0,5.0,-0.5
+3,manual,4,item,trust,TR_10,The system is reliable.,5.0,0.816,4.0,6.0,5.0,0.816,4.0,6.0,0.0
+3,manual,4,item,trust,TR_11,I can trust the system.,4.75,0.957,4.0,6.0,4.0,1.155,3.0,5.0,-0.75
+3,manual,4,item,trust,TR_12,I am familiar with the system.,4.0,2.16,1.0,6.0,4.25,2.217,1.0,6.0,0.25
+3,video,4,subscale,distrust,,,4.0,1.424,2.8,5.6,3.15,2.055,1.0,5.6,-0.85
+3,video,4,item,distrust,TR_01,The system is deceptive.,4.25,2.217,2.0,7.0,3.25,2.217,1.0,6.0,-1.0
+3,video,4,item,distrust,TR_02,The system behaves in an underhanded manner.,3.75,1.5,2.0,5.0,3.25,2.217,1.0,6.0,-0.5
+3,video,4,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",3.75,1.708,2.0,6.0,3.25,2.217,1.0,6.0,-0.5
+3,video,4,item,distrust,TR_04,I am wary of the system.,4.5,1.732,3.0,6.0,3.25,2.217,1.0,6.0,-1.25
+3,video,4,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,3.75,0.5,3.0,4.0,2.75,1.5,1.0,4.0,-1.0
+3,video,4,subscale,trust,,,4.321,1.115,2.714,5.143,5.179,1.392,4.0,6.714,0.857
+3,video,4,item,trust,TR_06,I am confident in the system.,3.5,1.732,2.0,5.0,4.75,2.217,2.0,7.0,1.25
+3,video,4,item,trust,TR_07,The system provides security.,4.5,1.291,3.0,6.0,6.0,1.414,4.0,7.0,1.5
+3,video,4,item,trust,TR_08,The system has integrity.,5.0,0.816,4.0,6.0,6.0,1.414,4.0,7.0,1.0
+3,video,4,item,trust,TR_09,The system is dependable.,5.5,1.291,4.0,7.0,5.75,1.5,4.0,7.0,0.25
+3,video,4,item,trust,TR_10,The system is reliable.,4.75,1.258,3.0,6.0,4.5,1.915,2.0,6.0,-0.25
+3,video,4,item,trust,TR_11,I can trust the system.,4.0,1.414,2.0,5.0,4.5,1.915,2.0,6.0,0.5
+3,video,4,item,trust,TR_12,I am familiar with the system.,3.0,2.309,1.0,5.0,4.75,2.872,1.0,7.0,1.75
+4,alle,7,subscale,distrust,,,3.8,0.49,3.4,4.6,4.229,1.339,3.2,7.0,0.429
+4,alle,7,item,distrust,TR_01,The system is deceptive.,4.286,1.604,2.0,7.0,4.0,1.826,2.0,7.0,-0.286
+4,alle,7,item,distrust,TR_02,The system behaves in an underhanded manner.,3.857,1.345,2.0,6.0,4.143,1.864,2.0,7.0,0.286
+4,alle,7,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",3.429,0.976,2.0,5.0,4.429,1.902,2.0,7.0,1.0
+4,alle,7,item,distrust,TR_04,I am wary of the system.,3.714,0.756,3.0,5.0,4.857,1.464,3.0,7.0,1.143
+4,alle,7,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,3.714,1.254,2.0,6.0,3.714,1.704,2.0,7.0,0.0
+4,alle,7,subscale,trust,,,4.306,1.191,2.0,5.714,4.714,1.283,2.571,6.143,0.408
+4,alle,7,item,trust,TR_06,I am confident in the system.,4.286,1.799,1.0,6.0,4.571,1.988,1.0,7.0,0.286
+4,alle,7,item,trust,TR_07,The system provides security.,4.429,1.618,1.0,6.0,5.0,1.528,3.0,7.0,0.571
+4,alle,7,item,trust,TR_08,The system has integrity.,4.714,1.254,3.0,6.0,4.714,1.496,3.0,7.0,0.0
+4,alle,7,item,trust,TR_09,The system is dependable.,4.286,1.604,1.0,6.0,4.571,1.902,1.0,7.0,0.286
+4,alle,7,item,trust,TR_10,The system is reliable.,4.429,1.397,2.0,6.0,5.0,1.291,3.0,7.0,0.571
+4,alle,7,item,trust,TR_11,I can trust the system.,4.571,2.07,1.0,7.0,4.571,1.988,1.0,7.0,0.0
+4,alle,7,item,trust,TR_12,I am familiar with the system.,3.429,1.718,1.0,6.0,4.571,2.299,1.0,7.0,1.143
+4,manual,2,subscale,distrust,,,4.0,0.566,3.6,4.4,3.9,0.99,3.2,4.6,-0.1
+4,manual,2,item,distrust,TR_01,The system is deceptive.,3.5,2.121,2.0,5.0,3.0,0.0,3.0,3.0,-0.5
+4,manual,2,item,distrust,TR_02,The system behaves in an underhanded manner.,4.0,2.828,2.0,6.0,4.5,2.121,3.0,6.0,0.5
+4,manual,2,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",4.0,1.414,3.0,5.0,4.5,2.121,3.0,6.0,0.5
+4,manual,2,item,distrust,TR_04,I am wary of the system.,4.0,1.414,3.0,5.0,5.0,0.0,5.0,5.0,1.0
+4,manual,2,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,4.5,2.121,3.0,6.0,2.5,0.707,2.0,3.0,-2.0
+4,manual,2,subscale,trust,,,4.0,0.404,3.714,4.286,4.5,1.111,3.714,5.286,0.5
+4,manual,2,item,trust,TR_06,I am confident in the system.,4.0,1.414,3.0,5.0,4.0,1.414,3.0,5.0,0.0
+4,manual,2,item,trust,TR_07,The system provides security.,5.0,0.0,5.0,5.0,4.5,2.121,3.0,6.0,-0.5
+4,manual,2,item,trust,TR_08,The system has integrity.,4.0,1.414,3.0,5.0,4.0,1.414,3.0,5.0,0.0
+4,manual,2,item,trust,TR_09,The system is dependable.,4.5,0.707,4.0,5.0,6.0,1.414,5.0,7.0,1.5
+4,manual,2,item,trust,TR_10,The system is reliable.,4.0,0.0,4.0,4.0,5.0,0.0,5.0,5.0,1.0
+4,manual,2,item,trust,TR_11,I can trust the system.,3.5,0.707,3.0,4.0,4.0,1.414,3.0,5.0,0.5
+4,manual,2,item,trust,TR_12,I am familiar with the system.,3.0,0.0,3.0,3.0,4.0,2.828,2.0,6.0,1.0
+4,video,5,subscale,distrust,,,3.72,0.502,3.4,4.6,4.36,1.539,3.2,7.0,0.64
+4,video,5,item,distrust,TR_01,The system is deceptive.,4.6,1.517,3.0,7.0,4.4,2.074,2.0,7.0,-0.2
+4,video,5,item,distrust,TR_02,The system behaves in an underhanded manner.,3.8,0.837,3.0,5.0,4.0,2.0,2.0,7.0,0.2
+4,video,5,item,distrust,TR_03,"I am suspicious of the system's intent, action, or outputs.",3.2,0.837,2.0,4.0,4.4,2.074,2.0,7.0,1.2
+4,video,5,item,distrust,TR_04,I am wary of the system.,3.6,0.548,3.0,4.0,4.8,1.789,3.0,7.0,1.2
+4,video,5,item,distrust,TR_05,The system's actions will have a harmful or injurious outcome.,3.4,0.894,2.0,4.0,4.2,1.789,2.0,7.0,0.8
+4,video,5,subscale,trust,,,4.429,1.421,2.0,5.714,4.8,1.459,2.571,6.143,0.371
+4,video,5,item,trust,TR_06,I am confident in the system.,4.4,2.074,1.0,6.0,4.8,2.28,1.0,7.0,0.4
+4,video,5,item,trust,TR_07,The system provides security.,4.2,1.924,1.0,6.0,5.2,1.483,3.0,7.0,1.0
+4,video,5,item,trust,TR_08,The system has integrity.,5.0,1.225,3.0,6.0,5.0,1.581,3.0,7.0,0.0
+4,video,5,item,trust,TR_09,The system is dependable.,4.2,1.924,1.0,6.0,4.0,1.871,1.0,6.0,-0.2
+4,video,5,item,trust,TR_10,The system is reliable.,4.6,1.673,2.0,6.0,5.0,1.581,3.0,7.0,0.4
+4,video,5,item,trust,TR_11,I can trust the system.,5.0,2.345,1.0,7.0,4.8,2.28,1.0,7.0,-0.2
+4,video,5,item,trust,TR_12,I am familiar with the system.,3.6,2.074,1.0,6.0,4.8,2.387,1.0,7.0,1.2
