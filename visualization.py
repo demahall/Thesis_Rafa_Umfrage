@@ -7,8 +7,10 @@ Aufgabe 1: Spaghetti-Plot (Paired Slopegraph) fuer Mental Model, pro Gruppe ein 
   - Eine Linie pro Teilnehmer. Manual = blau, Punkt, durchgezogen. Video = rot, Quadrat, gestrichelt.
 Aufgabe 2: gleicher Plot-Typ fuer Trust (links, TR_06-12) und Distrust (rechts, TR_01-05), 2x1 Subplots, Y 1-7.
 
+Aufgabe 3: gleicher Plot-Typ fuer Acceptance, Usefulness (links) und Satisfaction (rechts), 2x1, Y -2 bis +2.
+
 Eingabe : output/data_clean.csv (aus preprocessing.py)
-Ausgabe : output/plots/mm_spaghetti_group1-4.png, output/plots/tr_spaghetti_group1-4.png
+Ausgabe : output/plots/mm_spaghetti_group1-4.png, output/plots/tr_spaghetti_group1-4.png, output/plots/ac_spaghetti_group1-4.png
 Start   : python3 visualization.py
 """
 from pathlib import Path
@@ -20,7 +22,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.lines import Line2D
 
-from analysis import MM_CAT, MM_ALL, TR_SUB, col  # gleiche Item-Definitionen wie in der Auswertung
+from analysis import AC_SUB, MM_CAT, MM_ALL, TR_SUB, col  # gleiche Item-Definitionen wie in der Auswertung
 
 BASE = Path(__file__).resolve().parent
 OUT = BASE / "output"
@@ -47,7 +49,7 @@ def draw_spaghetti(ax, d, construct, items, title, ylabel, ylim):
         m = d["medium"] == medium
         for a, b in zip(s1[m], s2[m]):
             ax.plot([0 + st["dx"], 1 + st["dx"]], [a, b], color=st["color"], ls=st["ls"],
-                    lw=1.4, alpha=0.8, marker=st["marker"], ms=6)
+                    lw=1.4, alpha=0.8, marker=st["marker"], ms=6, clip_on=False)
     ax.set_xticks([0, 1])
     ax.set_xticklabels(["t1 (pre)", "t2 (post)"])
     ax.set_xlim(-0.3, 1.3)
@@ -94,12 +96,27 @@ def plot_tr(df, g):
     return path
 
 
+def plot_ac(df, g):
+    d = df[df["group"] == g]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.8))
+    draw_spaghetti(axes[0], d, "AC", AC_SUB["usefulness"], "Usefulness", "Usefulness Scores", (-2, 2))
+    draw_spaghetti(axes[1], d, "AC", AC_SUB["satisfaction"], "Satisfaction", "Satisfaction Scores", (-2, 2))
+    fig.legend(handles=legend_handles(d), loc="upper right", frameon=True)
+    fig.suptitle("Acceptance Scores for Group %d" % g, fontsize=14, fontweight="bold")
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    path = PLOTS / ("ac_spaghetti_group%d.png" % g)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    return path
+
+
 def main():
     PLOTS.mkdir(parents=True, exist_ok=True)
     df = pd.read_csv(OUT / "data_clean.csv")
     for g in sorted(df["group"].unique()):
         print("geschrieben:", plot_mm(df, g))
         print("geschrieben:", plot_tr(df, g))
+        print("geschrieben:", plot_ac(df, g))
 
 
 if __name__ == "__main__":
